@@ -1,5 +1,6 @@
 import datetime
-import database
+
+from database import add_movie, get_movies
 
 
 def prompt_add_movie():
@@ -9,4 +10,17 @@ def prompt_add_movie():
 
     timestamp = parsed_date.timestamp()
 
-    database.add_movie(title, timestamp)
+    add_movie(title, timestamp)
+
+
+def display_movies(upcoming: bool = False):
+    movies = get_movies(upcoming)
+    print()
+
+    for movie in movies:
+        title, release_date, watched = movie
+
+        print(title)
+        print(release_date)
+        print("watched" if watched else "not watched", end="\n\n")
+
