@@ -19,7 +19,7 @@ def create_tables():
         connection.execute(CREATE_MOVIES_TABLE)
 
 
-def add_movie(title: str, release_timestamp: datetime.datetime):
+def add_movie(title: str, release_timestamp: float):
     with connection:
         connection.execute(INSERT_MOVIES, (title, release_timestamp))
 
