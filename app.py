@@ -1,31 +1,23 @@
 import database
 
+from menu import ACTIONS, MENU
 
-menu = """Please select one of the following options:
-1) Add new movie
-2) View upcoming movies
-3) View all movies
-4) Watch a movie
-5) View watched movies
-6) Exit
-
-Your selection: """
 
 welcome = "Welcome."
 
 print(welcome)
 database.create_tables()
 
-while (user_input := input(menu)) != "6":
-    if user_input == "1":
+while (user_input := input(MENU)) != ACTIONS["EXIT"]:
+    if user_input == ACTIONS["ADD_MOVIE"]:
         pass
-    elif user_input == "2":
+    elif user_input == ACTIONS["VIEW_UPCOMING_MOVIES"]:
         pass
-    elif user_input == "3":
+    elif user_input == ACTIONS["VIEW_ALL_MOVIES"]:
         pass
-    elif user_input == "4":
+    elif user_input == ACTIONS["WATCH_MOVIE"]:
         pass
-    elif user_input == "5":
+    elif user_input == ACTIONS["VIEW_WATCHED_MOVIES"]:
         pass
     else:
         print("Selected option is invalid.")
