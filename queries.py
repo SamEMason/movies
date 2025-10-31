@@ -13,3 +13,5 @@ SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
 
 SELECT_WATCHED_MOVIES = "SELECT * FROM movies WHERE watched = 1;"
+
+SET_MOVIE_WATCHED = "UPDATE movies SET watched = 1 WHERE title = ?"
