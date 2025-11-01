@@ -20,11 +20,11 @@ def display_movies(upcoming: bool = False):
     display_heading(title)
 
     for movie in movies:
-        title, release_date, watched = movie
+        title, release_date, _ = movie
+        movie_date = datetime.datetime.fromtimestamp(release_date)
+        human_readable_date = movie_date.strftime("%b %d, %Y")
 
-        print(title)
-        print(release_date)
-        print("watched" if watched else "not watched", end="\n\n")
+        print(f"{title} (on {human_readable_date})", end="\n\n")
 
     print("----\n")
 
