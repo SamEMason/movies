@@ -15,7 +15,9 @@ def prompt_add_movie():
 
 def display_movies(upcoming: bool = False):
     movies = get_movies(upcoming)
-    print()
+
+    title = "Upcoming Movies" if upcoming else "All Movies"
+    display_heading(title)
 
     for movie in movies:
         title, release_date, watched = movie
@@ -24,3 +26,8 @@ def display_movies(upcoming: bool = False):
         print(release_date)
         print("watched" if watched else "not watched", end="\n\n")
 
+    print("----\n")
+
+
+def display_heading(title: str):
+    print(f"\n---- {title} ----\n")
