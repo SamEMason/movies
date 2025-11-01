@@ -5,8 +5,8 @@ from database import add_movie, get_movies
 
 def prompt_add_movie():
     title = input("Movie title: ")
-    release_date = input("Release date (dd-mm-YYYY): ")
-    parsed_date = datetime.datetime.strptime(release_date, "%d-%m-%Y")
+    release_date = input("Release date (mm-dd-YYYY): ")
+    parsed_date = datetime.datetime.strptime(release_date, "%m-%d-%Y")
 
     timestamp = parsed_date.timestamp()
 
