@@ -1,7 +1,12 @@
 import database
 
 from menu import ACTIONS, MENU
-from views import display_movies, prompt_add_movie
+from views import (
+    display_movies,
+    display_watched_movies,
+    prompt_add_movie,
+    prompt_watch_movie,
+)
 
 
 welcome = "Welcome."
@@ -17,8 +22,8 @@ while (user_input := input(MENU)) != ACTIONS["EXIT"]:
     elif user_input == ACTIONS["VIEW_ALL_MOVIES"]:
         display_movies()
     elif user_input == ACTIONS["WATCH_MOVIE"]:
-        pass
+        prompt_watch_movie()
     elif user_input == ACTIONS["VIEW_WATCHED_MOVIES"]:
-        pass
+        display_watched_movies()
     else:
         print("Selected option is invalid.")

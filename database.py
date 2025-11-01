@@ -42,7 +42,7 @@ def watch_movie(title: str):
         connection.execute(SET_MOVIE_WATCHED, (title,))
 
 
-def get_watched_movie():
+def get_watched_movies():
     with connection:
         cursor = connection.cursor()
         cursor.execute(SELECT_WATCHED_MOVIES)
