@@ -15,7 +15,7 @@ while (user_input := input(MENU)) != ACTIONS["EXIT"]:
     elif user_input == ACTIONS["VIEW_UPCOMING_MOVIES"]:
         display_movies(upcoming=True)
     elif user_input == ACTIONS["VIEW_ALL_MOVIES"]:
-        display_movies(upcoming=False)
+        display_movies()
     elif user_input == ACTIONS["WATCH_MOVIE"]:
         pass
     elif user_input == ACTIONS["VIEW_WATCHED_MOVIES"]:
