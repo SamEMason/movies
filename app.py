@@ -3,12 +3,13 @@ import database
 from menu import ACTIONS, MENU
 from views import (
     display_movies,
+    display_movie_watchlist,
     prompt_add_movie,
     prompt_watch_movie,
 )
 
 
-welcome = "Welcome."
+welcome = "Welcome.\n"
 
 print(welcome)
 database.create_tables()
@@ -30,8 +31,9 @@ while (user_input := input(MENU)) != ACTIONS["EXIT"]:
         prompt_watch_movie()
 
     elif user_input == ACTIONS["VIEW_WATCHED_MOVIES"]:
-        watched_movies = database.get_watched_movies()
-        display_movies(movies=watched_movies, heading="Watched Movies")
+        username = input("Enter username: ")
+        watched_movies = database.get_watched_movies(username)
+        display_movie_watchlist(username, watched_movies)
 
     else:
         print("Selected option is invalid.")
